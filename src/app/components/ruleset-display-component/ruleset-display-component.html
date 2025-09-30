@@ -1,11 +1,11 @@
 <div class="ruleset-display">
-  <h2>
+  <h2 class="page-title">
     {{ kind() === RulesKind.Captain ? 'Regole Capitano' : 'Regole Team' }}
   </h2>
 
-  <div class="rules-table">
-    <section class="rules-column">
-      <h3>Bonus</h3>
+  <div class="rules-grid">
+    <section class="rules-group">
+      <h3 class="section-title section-title--bonus">Bonus</h3>
       @if (bonusRules().length > 0) {
         <div class="rules-list">
           @for (rule of bonusRules(); track trackByText($index, rule)) {
@@ -13,12 +13,12 @@
           }
         </div>
       } @else {
-        <p>Nessun bonus trovato</p>
+        <p class="empty">Nessun bonus trovato</p>
       }
     </section>
 
-    <section class="rules-column">
-      <h3>Malus</h3>
+    <section class="rules-group">
+      <h3 class="section-title section-title--malus">Malus</h3>
       @if (malusRules().length > 0) {
         <div class="rules-list">
           @for (rule of malusRules(); track trackByText($index, rule)) {
@@ -26,7 +26,7 @@
           }
         </div>
       } @else {
-        <p>Nessun malus trovato</p>
+        <p class="empty">Nessun malus trovato</p>
       }
     </section>
   </div>
