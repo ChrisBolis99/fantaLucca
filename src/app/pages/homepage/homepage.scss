@@ -1,0 +1,39 @@
+.home {
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+}
+
+.scores-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 12px 18px;
+  border-radius: 9999px;
+  background: var(--surface-2);
+  border: 1px solid var(--surface-border);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  user-select: none;
+}
+
+.scores-button:hover { filter: brightness(1.05); }
+.scores-button:active { transform: translateY(1px); }
+.scores-button:focus-visible {
+  outline: 2px solid var(--score-positive); 
+  outline-offset: 2px;
+  border-color: var(--score-positive);
+}
+
+.scores-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-block;
+  flex: 0 0 auto;
+  fill: currentColor;
+  color: var(--score-positive);
+}
+
+.scores-label { font-size: 0.98rem; }

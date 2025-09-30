@@ -1,13 +1,13 @@
-<div class="ruleset-display">
+<div class="scoreset-display">
   <h2 class="page-title">
     {{ kind() === RulesKind.Captain ? 'Regole Capitano' : 'Regole Team' }}
   </h2>
 
-  <div class="rules-grid">
-    <section class="rules-group">
+  <div class="scores-grid">
+    <section class="scores-group">
       <h3 class="section-title section-title--bonus">Bonus</h3>
       @if (bonusRules().length > 0) {
-        <div class="rules-list">
+        <div class="scores-button">
           @for (rule of bonusRules(); track trackByText($index, rule)) {
             <app-scoring-event-component [rule]="rule"></app-scoring-event-component>
           }
@@ -17,10 +17,10 @@
       }
     </section>
 
-    <section class="rules-group">
+    <section class="scores-group">
       <h3 class="section-title section-title--malus">Malus</h3>
       @if (malusRules().length > 0) {
-        <div class="rules-list">
+        <div class="scores-list">
           @for (rule of malusRules(); track trackByText($index, rule)) {
             <app-scoring-event-component [rule]="rule"></app-scoring-event-component>
           }

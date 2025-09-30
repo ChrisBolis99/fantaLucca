@@ -1,4 +1,4 @@
-.ruleset-display {
+.scoreset-display {
   padding: 24px;
   background: var(--surface-1);
   border: 1px solid var(--surface-border);
@@ -13,7 +13,7 @@
   font-weight: 700;
 }
 
-.rules-grid {
+.scores-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
@@ -25,7 +25,7 @@
   }
 }
 
-.rules-group {
+.scores-group {
   display: flex;
   flex-direction: column;
 }
@@ -57,10 +57,10 @@
   }
 }
 
-.section-title--bonus { --accent: var(--good); --icon: "▲"; }
-.section-title--malus { --accent: var(--bad);  --icon: "▼"; }
+.section-title--bonus { --accent: var(--score-positive); --icon: "▲"; }
+.section-title--malus { --accent: var(--score-negative);  --icon: "▼"; }
 
-.rules-list {
+.scores-list {
   display: flex;
   flex-direction: column;
 }
