@@ -3,26 +3,24 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { forkJoin, map, Observable } from 'rxjs';
 import { Rule } from '../models/rule';
-import { RulesKind } from '../enum/rules-kind';
+import { ScoresGroup } from '../enum/scores-group';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RulesService {
+export class ScoresService {
   private readonly http: HttpClient = inject(HttpClient);
-  private readonly captainRulesURL: string = environment.captainRulesURL;
-  private readonly teamRulesURL: string = environment.teamRulesURL;
 
-  getRules(kind: RulesKind): Observable<Rule[]> {
+  getScores(kind: ScoresGroup): Observable<Rule[]> {
     let url : string;
 
     switch (kind) {
-      case RulesKind.Captain:
-        url = environment.captainRulesURL;
+      case ScoresGroup.Captain:
+        url = environment.captainScoresURL;
         break;
 
-      case RulesKind.Team:
-        url = environment.teamRulesURL;
+      case ScoresGroup.Team:
+        url = environment.teamScoresURL;
         break;
 
       default: 

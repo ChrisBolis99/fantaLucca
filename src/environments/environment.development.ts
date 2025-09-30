@@ -1,4 +1,4 @@
 export const environment = {
-    captainRulesURL: 'assets/captain_rules.json',
-    teamRulesURL: 'assets/team_rules.json'
+    captainScoresURL: 'assets/captain_scores.json',
+    teamScoresURL: 'assets/team_scores.json'
 };

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ScoreSetDisplayComponent } from "../../components/scoreset-display-component/scoreset-display-component";
-import { RulesKind } from '../../enum/rules-kind';
+import { ScoresGroup } from '../../enum/scores-group';
 
 @Component({
   selector: 'app-scores-page',
@@ -9,5 +9,5 @@ import { RulesKind } from '../../enum/rules-kind';
   styleUrl: './scores-page.scss'
 })
 export class ScoresPage {
-  RulesKind = RulesKind;
+  RulesKind = ScoresGroup;
 }
