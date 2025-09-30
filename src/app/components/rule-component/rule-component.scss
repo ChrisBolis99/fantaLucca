@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+:host(:not(:first-child)) {
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  background: transparent;
+}
+
+.text {
+  flex: 1 1 auto;
+  color: #d9e2ec;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.points-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  min-width: 4.75rem;
+  justify-content: flex-end;
+}
+
+.points {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  &.positive { color: #22c55e; }
+  &.negative { color: #ef4444; }
+}
+
+.unit {
+  color: #94a3b8;
+  font-size: 0.92rem;
+  font-weight: 400;
+  text-transform: lowercase;
+}

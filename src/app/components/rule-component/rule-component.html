@@ -1,0 +1,9 @@
+<div class="rule">
+    <span class="text">{{ rule().text }}</span>
+    <span class="points-wrapper">
+        <span class="points" [class.positive]="rule().points > 0" [class.negative]="rule().points < 0">
+            {{ rule().points > 0 ? '+' : '' }}{{ rule().points }}
+        </span>
+        <span class="unit">pt.</span>
+    </span>
+</div>
