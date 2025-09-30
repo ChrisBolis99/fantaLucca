@@ -1,68 +1,76 @@
 .btn {
+  --btn-bg: var(--surface-2);
+  --btn-border: var(--surface-border);
+  --btn-fg: var(--text);
+  --btn-accent: var(--focus-ring, color-mix(in srgb, white, transparent 75%));
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: .6rem;
 
   padding: 12px 18px;
   border-radius: 9999px;
-  border: 1px solid var(--surface-border);
-  background: var(--surface-2);
-  color: var(--text);
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
   text-decoration: none;
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
-  .btn__icon {
-    width: 1.1rem;
-    height: 1.1rem;
+  &__icon {
+    width: 1.1rem; height: 1.1rem;
     display: inline-block;
     flex: 0 0 auto;
     fill: currentColor;
   }
-  .btn__label { font-size: 0.98rem; }
+  &__label { font-size: .98rem; }
+
+  &:hover { filter: brightness(1.05); }
+  &:active { transform: translateY(1px); }
+  &:focus-visible {
+    outline: 2px solid var(--btn-accent);
+    outline-offset: 2px;
+    border-color: var(--btn-accent);
+  }
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: .6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &--sm { padding: 8px 12px; font-weight: 600; }
+  &--lg { padding: 14px 22px; font-size: 1.02rem; }
+  &--block { display: flex; width: 100%; }
+
+  &--primary {
+    --btn-bg: color-mix(in srgb, var(--score-positive), transparent 85%);
+    --btn-border: color-mix(in srgb, var(--score-positive), transparent 70%);
+    --btn-accent: var(--score-positive);
+    .btn__icon { color: var(--score-positive); }
+  }
+
+  &--danger {
+    --btn-bg: color-mix(in srgb, var(--score-negative), transparent 88%);
+    --btn-border: color-mix(in srgb, var(--score-negative), transparent 72%);
+    --btn-accent: var(--score-negative);
+    .btn__icon { color: var(--score-negative); }
+  }
+
+  &--ghost {
+    --btn-bg: transparent;
+    --btn-border: var(--surface-border);
+  }
+
+  &--tint {
+    --btn-bg: color-mix(in srgb, var(--surface-2), white 3%);
+  }
 }
 
-.btn:hover { filter: brightness(1.05); }
-.btn:active { transform: translateY(1px); }
-.btn:focus-visible {
-  outline: 2px solid var(--score-positive);
-  outline-offset: 2px;
-  border-color: var(--score-positive);
-}
-
-.btn:disabled,
-.btn[aria-disabled="true"] {
-  opacity: .6;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.btn--sm { padding: 8px 12px; font-weight: 600; }
-.btn--lg { padding: 14px 22px; font-size: 1.02rem; }
-
-.btn--block { display: flex; width: 100%; }
-
-.btn--primary {
-  background: color-mix(in srgb, var(--score-positive), transparent 85%);
-  border-color: color-mix(in srgb, var(--score-positive), transparent 70%);
-  color: var(--text);
-}
-.btn--primary .btn__icon { color: var(--score-positive); }
-
-.btn--danger {
-  background: color-mix(in srgb, var(--score-negative), transparent 88%);
-  border-color: color-mix(in srgb, var(--score-negative), transparent 72%);
-}
-.btn--danger .btn__icon { color: var(--score-negative); }
-
-.btn--ghost {
-  background: transparent;
-  border-color: var(--surface-border);
-}
-
-.btn--tint {
-  background: color-mix(in srgb, var(--surface-2), white 3%);
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
 }
