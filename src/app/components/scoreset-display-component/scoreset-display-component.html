@@ -9,7 +9,7 @@
       @if (bonusRules().length > 0) {
         <div class="rules-list">
           @for (rule of bonusRules(); track trackByText($index, rule)) {
-            <app-rule-component [rule]="rule"></app-rule-component>
+            <app-scoring-event-component [rule]="rule"></app-scoring-event-component>
           }
         </div>
       } @else {
@@ -22,7 +22,7 @@
       @if (malusRules().length > 0) {
         <div class="rules-list">
           @for (rule of malusRules(); track trackByText($index, rule)) {
-            <app-rule-component [rule]="rule"></app-rule-component>
+            <app-scoring-event-component [rule]="rule"></app-scoring-event-component>
           }
         </div>
       } @else {

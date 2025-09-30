@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RulesPage } from './rules-page';
+import { ScoreSetDisplayComponent } from './scoreset-display-component';
 
-describe('RulesPage', () => {
-  let component: RulesPage;
-  let fixture: ComponentFixture<RulesPage>;
+describe('RulesetDisplayComponent', () => {
+  let component: ScoreSetDisplayComponent;
+  let fixture: ComponentFixture<ScoreSetDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RulesPage]
+      imports: [ScoreSetDisplayComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RulesPage);
+    fixture = TestBed.createComponent(ScoreSetDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

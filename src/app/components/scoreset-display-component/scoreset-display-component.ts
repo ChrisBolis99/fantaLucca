@@ -3,15 +3,15 @@ import { RulesService } from '../../services/rules-service';
 import { RulesKind } from '../../enum/rules-kind';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Rule } from '../../models/rule';
-import { RuleComponent } from "../rule-component/rule-component";
+import { ScoringEventComponent } from "../scoring-event-component/scoring-event-component";
 
 @Component({
-  selector: 'app-ruleset-display-component',
-  imports: [RuleComponent],
-  templateUrl: './ruleset-display-component.html',
-  styleUrl: './ruleset-display-component.scss'
+  selector: 'app-scoreset-display-componentt',
+  imports: [ScoringEventComponent],
+  templateUrl: './scoreset-display-component.html',
+  styleUrl: './scoreset-display-component.scss'
 })
-export class RulesetDisplayComponent {
+export class ScoreSetDisplayComponent {
   private readonly rulesService = inject(RulesService);
 
   kind = input<RulesKind>(RulesKind.Captain);
