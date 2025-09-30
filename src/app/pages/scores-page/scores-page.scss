@@ -8,14 +8,14 @@ h1 {
   margin: 0 0 20px;
 }
 
-app-ruleset-display-component {
+app-scoreset-display-component {
   display: block;
   width: min(94vw, 1020px);
   margin: 16px auto 28px;
 }
 
 @media (min-width: 1400px) {
-  app-ruleset-display-component {
+  app-scoreset-display-component {
     width: min(90vw, 1140px);
   }
 }

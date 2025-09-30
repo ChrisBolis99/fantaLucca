@@ -9,5 +9,5 @@ import { ScoresGroup } from '../../enum/scores-group';
   styleUrl: './scores-page.scss'
 })
 export class ScoresPage {
-  RulesKind = ScoresGroup;
+  ScoresKind = ScoresGroup;
 }
