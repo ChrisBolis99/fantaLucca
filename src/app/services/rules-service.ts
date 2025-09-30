@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { Observable } from 'rxjs';
-import { Rule } from '../components/rule/rule';
+import { forkJoin, map, Observable } from 'rxjs';
+import { Rule } from '../models/rule';
+import { RulesKind } from '../enum/rules-kind';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,24 @@ export class RulesService {
   private readonly captainRulesURL: string = environment.captainRulesURL;
   private readonly teamRulesURL: string = environment.teamRulesURL;
 
-  getCaptainRules() : Observable<Rule[]> {
-    return this.http.get<Rule[]>(this.captainRulesURL);
-  }
+  getRules(kind: RulesKind): Observable<Rule[]> {
+    let url : string;
 
-  getTeamRules(): Observable<Rule[]> {
-    return this.http.get<Rule[]>(this.teamRulesURL);
+    switch (kind) {
+      case RulesKind.Captain:
+        url = environment.captainRulesURL;
+        break;
+
+      case RulesKind.Team:
+        url = environment.teamRulesURL;
+        break;
+
+      default: 
+        throw new Error(`Unsupported rules kind: ${kind}`);
+    }
+
+    return this.http.get<Omit<Rule, 'type'>[]>(url).pipe(
+      map(rules => rules.map(r => ({ ...r, type: kind })))
+    );
   }
 }

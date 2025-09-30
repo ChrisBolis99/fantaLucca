@@ -1,4 +1,7 @@
+import { RulesKind } from "../enum/rules-kind";
+
 export interface Rule {
     text: string,
-    points: number
+    points: number,
+    type: RulesKind
 }

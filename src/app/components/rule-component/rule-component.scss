@@ -1,0 +1,38 @@
+.rule {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+
+  .text {
+    flex: 1;
+    font-size: 0.95rem;
+  }
+
+  .points-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    font-weight: 600;
+    min-width: 4rem;
+    justify-content: flex-end;
+  }
+
+  .points {
+    &.positive {
+      color: #2e7d32;
+    }
+    &.negative {
+      color: #c62828;
+    }
+  }
+
+  .unit {
+    color: #444;
+    font-size: 0.85rem;
+    font-weight: normal;
+  }
+}
